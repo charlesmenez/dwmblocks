@@ -1,0 +1,14 @@
+#!/bin/bash
+
+battery_status=$(acpi -b | awk '{print $3}' | tr -d ',')
+
+if [ "$battery_status" == "Full" ]; then
+    echo " Full"
+elif [ "$battery_status" == "Charging" ]; then
+    acpi -b | awk '{print " Charging "$4}'
+elif [ "$battery_status" == "Discharging" ]; then
+    acpi -b | awk '{print " Battery: "$4}' | tr ',' ' '
+else
+    echo "Battery status is unknown."
+fi
+
