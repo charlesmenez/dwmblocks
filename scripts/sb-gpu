@@ -1,5 +1,5 @@
 #!/bin/bash
 
-temperature=$(sensors | awk '/vddgfx/{getline; print $2}')
+temperature=$(sensors | awk '/fan1/{getline; print $2}')
 
 echo "GPU $temperature"
