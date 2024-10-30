@@ -1,12 +1,13 @@
 // Modify this file to change what commands output to your statusbar, and
 // recompile using the make command.
+// uncomment sb-battery if you're using laptop
 static const Block blocks[] = {
     /*Icon*/ /*Command*/ /*Update Interval*/ /*Update Signal*/
     {"", "sb-memory", 10, 1},
     {"", "sb-gpu", 2, 10},
     {"", "sb-cpu", 2, 10},
     {"", "sb-clock", 60, 1},
-    {"", "sb-battery", 10, 0},
+//    {"", "sb-battery", 10, 0},
 };
 
 // Sets delimiter between status commands. NULL character ('\0') means no
