@@ -1,5 +1,5 @@
 #!/bin/bash
 
-temperature=$(sensors | awk '/fan1/{getline; print $2}')
+temperature=$(sensors | grep edge | awk '{print $2}' | sed 's/+//')
 
 echo "GPU $temperature"

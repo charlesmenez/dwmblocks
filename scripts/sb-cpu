@@ -1,4 +1,4 @@
 #!/bin/bash
 
-sensors | awk '/Core 0/ {print " CPU " $3}'
+sensors | grep Package | awk '{print "CPU " $4}' | sed 's/+//'
 
